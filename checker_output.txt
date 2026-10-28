@@ -1,0 +1,57 @@
+split.csv: 1000 rows. scores.csv: 600 rows.
+
+Rows per dataset and split
+--------------------------
+                dataset      split  rows  positive  negative  positive %
+squad1.1_validation_250      train   400       300       100        75.0
+squad1.1_validation_250 validation   200       150        50        75.0
+squad1.1_validation_250       test   400       300       100        75.0
+
+Metrics per test set (threshold 0.47903516630541754; positive when score >= threshold)
+--------------------------------------------------------------------------------------
+Each value is followed by its 95% bootstrap interval in brackets.
+
+Test set: beginning
+  test rows                 200
+  positive rows             100 (50.00%)
+  negative rows             100 (50.00%)
+  bootstrap resamples       1000
+  random-scorer AP          0.5000 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9259 [0.8704, 0.9725]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0800 [0.0303, 0.1379]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Test set: middle
+  test rows                 200
+  positive rows             100 (50.00%)
+  negative rows             100 (50.00%)
+  bootstrap resamples       1000
+  random-scorer AP          0.5000 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9259 [0.8716, 0.9706]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0800 [0.0309, 0.1398]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Test set: end
+  test rows                 200
+  positive rows             100 (50.00%)
+  negative rows             100 (50.00%)
+  bootstrap resamples       1000
+  random-scorer AP          0.5000 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9259 [0.8727, 0.9717]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0800 [0.0297, 0.1354]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Warnings
+--------
+- beginning: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 3(e).
+- middle: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 3(e).
+- end: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 3(e).

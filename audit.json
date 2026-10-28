@@ -1,0 +1,74 @@
+{
+  "source_validation_rows": 10570,
+  "source_columns": [
+    "id",
+    "title",
+    "context",
+    "question",
+    "answers"
+  ],
+  "source_split": "rajpurkar/squad / validation (SQuAD v1.1)",
+  "source_url": "https://huggingface.co/datasets/rajpurkar/squad",
+  "sample_base_rows": 250,
+  "augmented_rows": 1000,
+  "augmented_columns": 11,
+  "class_counts": {
+    "positive": 750,
+    "negative": 250
+  },
+  "missing_label": 0,
+  "missing_context": 0,
+  "missing_question": 0,
+  "missing_answers": 0,
+  "exact_duplicates_base": 0,
+  "exact_duplicate_fields": [
+    "question",
+    "context"
+  ],
+  "near_duplicate_pairs": 0,
+  "near_duplicate_rule": "same passage after lowercase/alphanumeric normalization but different original strings",
+  "contexts_repeated": 50,
+  "rows_in_repeated_contexts": 250,
+  "article_titles": 27,
+  "time_range": "unavailable: no timestamp field in SQuAD",
+  "cross_train_test_duplicate_keys": 0,
+  "cross_train_validation_duplicate_keys": 0,
+  "split_summary": {
+    "test": {
+      "rows": 400,
+      "positive": 300,
+      "negative": 100
+    },
+    "train": {
+      "rows": 400,
+      "positive": 300,
+      "negative": 100
+    },
+    "validation": {
+      "rows": 200,
+      "positive": 150,
+      "negative": 50
+    }
+  },
+  "removed_cross_split": 0,
+  "removed_explanation": "Normalized identical contexts are group-assigned before augmentation; no overlapping base IDs across splits.",
+  "threshold": 0.47903516630541754,
+  "validation_false_positive_rate": 0.04,
+  "training_seconds": 0.11356983300004231,
+  "hardware": "Linux-6.6.159+-x86_64-with-glibc2.39",
+  "python": "3.13.16",
+  "pandas": "2.2.3",
+  "numpy": "2.1.3",
+  "sklearn": "1.6.1",
+  "seed": 16,
+  "base_classifier": "TF-IDF (1,2)-grams + balanced logistic regression (liblinear, max_iter=1000)",
+  "threshold_rule": "Maximize validation recall subject to validation FPR <= 0.05; ties select lower threshold",
+  "positive_class": "1 = attack instruction inserted, 0 = clean passage",
+  "primary_metric": "Recall at a validation-selected threshold with validation false positive rate <=5%",
+  "feature_warning": "The exact attack wording appears in training and test; high scores can arise from detecting shared payload tokens. This does not measure whether Qwen obeys the instruction.",
+  "figure_finding": {
+    "middle_recall": 1.0,
+    "middle_test_rows": 200,
+    "middle_positive_pct": 50.0
+  }
+}
