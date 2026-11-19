@@ -1,0 +1,91 @@
+split.csv: 800 rows. scores.csv: 600 rows, 3 value(s), 1 column(s).
+Values: beginning, middle, end
+
+Rows per dataset and split
+--------------------------
+                dataset      split  rows  positive  negative  positive %
+squad1.1_validation_250      train   400       300       100        75.0
+squad1.1_validation_250 validation   200       150        50        75.0
+squad1.1_validation_250       test   200       100       100        50.0
+
+Metrics per value and column (positive when score >= the threshold)
+-------------------------------------------------------------------
+Each value is followed by its 95% bootstrap interval in brackets.
+
+Value: beginning   Column: SQuAD detector
+  threshold                 0.479035
+  test rows                 200
+  positive rows             100 (50.00%)
+  negative rows             100 (50.00%)
+  bootstrap resamples       1000
+  random-scorer AP          0.5000 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9259 [0.8727, 0.9712]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0800 [0.0306, 0.1352]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Value: middle   Column: SQuAD detector
+  threshold                 0.479035
+  test rows                 200
+  positive rows             100 (50.00%)
+  negative rows             100 (50.00%)
+  bootstrap resamples       1000
+  random-scorer AP          0.5000 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9259 [0.8718, 0.9720]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0800 [0.0309, 0.1413]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Value: end   Column: SQuAD detector
+  threshold                 0.479035
+  test rows                 200
+  positive rows             100 (50.00%)
+  negative rows             100 (50.00%)
+  bootstrap resamples       1000
+  random-scorer AP          0.5000 (equals the positive share)
+  random-scorer AUROC       0.5000
+  precision                 0.9259 [0.8762, 0.9714]
+  recall                    1.0000 [1.0000, 1.0000]
+  false-positive rate       0.0800 [0.0316, 0.1340]
+  AP                        1.0000 [1.0000, 1.0000]
+  AUROC                     1.0000 [1.0000, 1.0000]
+
+Results table: recall [95% interval] (copy into section 1(d))
+-------------------------------------------------------------
+A one-class cell holds the metric the checker prints for it, named in parentheses.
+
+Column: SQuAD detector
+  beginning   1.0000 [1.0000, 1.0000]
+  middle      1.0000 [1.0000, 1.0000]
+  end         1.0000 [1.0000, 1.0000]
+
+Difference from the baseline value 'beginning' (copy into section 1(e))
+-----------------------------------------------------------------------
+Difference = the value's metric minus the baseline value's metric in the same column.
+Direction of interest: either. Change = the size of the difference.
+The verdict in section 1(e) compares the change with your yes and no differences.
+
+Column: SQuAD detector
+  middle      difference +0.0000   change +0.0000 (recall)
+  end         difference +0.0000   change +0.0000 (recall)
+
+Error sample (section 4)
+------------------------
+Value: beginning   Column: SQuAD detector
+  misclassified rows available   8 false positives, 0 false negatives
+  sampled                        8 false positives, 0 false negatives
+
+error                                     false positive  false negative  total
+category                                                                       
+Irvine place and business questions                    5               0      5
+Electrical engineering history questions               3               0      3
+
+Warnings
+--------
+- value beginning, column SQuAD detector: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value middle, column SQuAD detector: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
+- value end, column SQuAD detector: recall, AP, AUROC at or above 0.99. Name the leakage check you ran and its result in section 1(c).
